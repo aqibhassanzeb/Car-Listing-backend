@@ -4,6 +4,7 @@ import { Car } from "../modals/Car.js";
 // Add new car 
 
 export const addCar = async (req, res) => {
+  
   const { name, colour, model, registerationNo, type } = req.body
   if (!name || !colour || !model || !registerationNo || !type) {
     return res.status(422).json({ error: "please fill all fields" })
