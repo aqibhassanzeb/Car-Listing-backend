@@ -2,6 +2,8 @@ import mongoose from "mongoose"
 import dotenv from 'dotenv'
 dotenv.config();
 
+
+
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -10,5 +12,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     console.log('database connected.')
   })
   .catch((err) => console.log(err.message))
-
-
+  
+  
+  export const configMail=process.env.MONGODB_URI
+  export const configPass=process.env.MAIL_PASS

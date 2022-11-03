@@ -2,10 +2,11 @@ import { User } from '../modals/User.js'
 import jwt from "jsonwebtoken";
 import bycrypt from "bcryptjs"
 import nodemailer from "nodemailer"
+import { configMail, configPass } from '../config.js';
 
 
 
-const transporter = nodemailer.createTransport({ service: "gmail", auth: { user: "workspatron@gmail.com", pass: "mhoumpxfstzptawc" }, from: "workspatron@gmail.com" })
+const transporter = nodemailer.createTransport({ service: "gmail", auth: { user:"workspatron@gmail.com" , pass:configPass }, from: "workspatron@gmail.com" })
 transporter.verify((err, succ) => {
     if (err) {
         console.log(err);
